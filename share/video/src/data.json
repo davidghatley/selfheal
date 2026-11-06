@@ -1,0 +1,815 @@
+{
+"lines": [
+{
+"file": "_topnav.scss",
+"prop": "max-height",
+"month": "2017-02"
+},
+{
+"file": "_topnav.scss",
+"prop": "max-width",
+"month": "2017-02"
+},
+{
+"file": "_topnav.scss",
+"prop": "min-height",
+"month": "2017-02"
+},
+{
+"file": "_topnav.scss",
+"prop": "min-width",
+"month": "2017-02"
+},
+{
+"file": "_tabs.scss",
+"prop": "margin-left",
+"month": "2017-03"
+},
+{
+"file": "_card.scss",
+"prop": "height",
+"month": "2017-04"
+},
+{
+"file": "_modal.scss",
+"prop": "margin-bottom",
+"month": "2017-04"
+},
+{
+"file": "_toggle.scss",
+"prop": "width",
+"month": "2017-04"
+},
+{
+"file": "interior-left-nav.scss",
+"prop": "width",
+"month": "2017-05"
+},
+{
+"file": "demo.scss",
+"prop": "margin-left",
+"month": "2017-07"
+},
+{
+"file": "demo.scss",
+"prop": "padding-left",
+"month": "2017-07"
+},
+{
+"file": "_tile.scss",
+"prop": "padding-right",
+"month": "2017-10"
+},
+{
+"file": "_data-table-v2-core.scss",
+"prop": "height",
+"month": "2017-11"
+},
+{
+"file": "_pagination.scss",
+"prop": "width",
+"month": "2017-11"
+}
+],
+"fixes": [
+true,
+true,
+true,
+false,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+false,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+false,
+true,
+true,
+true,
+false,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true,
+true
+],
+"clusters": [
+{
+"v": 1.0,
+"label": "drift",
+"month": "2015-08"
+},
+{
+"v": 16.0,
+"label": "coincident",
+"month": "2015-10"
+},
+{
+"v": 12.0,
+"label": "coincident",
+"month": "2015-10"
+},
+{
+"v": 14.0,
+"label": "coincident",
+"month": "2016-01"
+},
+{
+"v": 0.1,
+"label": "drift",
+"month": "2016-02"
+},
+{
+"v": 8.0,
+"label": "coincident",
+"month": "2016-02"
+},
+{
+"v": 42.0,
+"label": "drift",
+"month": "2016-02"
+},
+{
+"v": 2.0,
+"label": "desire",
+"month": "2016-02"
+},
+{
+"v": 15.0,
+"label": "drift",
+"month": "2016-02"
+},
+{
+"v": 10.0,
+"label": "coincident",
+"month": "2016-02"
+},
+{
+"v": 20.0,
+"label": "coincident",
+"month": "2016-02"
+},
+{
+"v": 48.0,
+"label": "desire",
+"month": "2016-02"
+},
+{
+"v": 32.0,
+"label": "desire",
+"month": "2016-02"
+},
+{
+"v": 24.0,
+"label": "coincident",
+"month": "2016-03"
+},
+{
+"v": 64.0,
+"label": "coincident",
+"month": "2016-03"
+},
+{
+"v": 30.0,
+"label": "drift",
+"month": "2016-03"
+},
+{
+"v": 25.0,
+"label": "drift",
+"month": "2016-03"
+},
+{
+"v": 225.0,
+"label": "unresolved",
+"month": "2016-04"
+},
+{
+"v": 40.0,
+"label": "desire",
+"month": "2016-04"
+},
+{
+"v": 22.0,
+"label": "drift",
+"month": "2016-04"
+},
+{
+"v": 72.0,
+"label": "drift",
+"month": "2016-04"
+},
+{
+"v": 0.2,
+"label": "drift",
+"month": "2016-04"
+},
+{
+"v": 50.0,
+"label": "coincident",
+"month": "2016-04"
+},
+{
+"v": 0.5,
+"label": "drift",
+"month": "2016-06"
+},
+{
+"v": 18.0,
+"label": "unresolved",
+"month": "2016-06"
+},
+{
+"v": 6.0,
+"label": "unresolved",
+"month": "2016-06"
+},
+{
+"v": 45.0,
+"label": "drift",
+"month": "2016-06"
+},
+{
+"v": 26.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 150.0,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 14.4,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 4.8,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 56.0,
+"label": "desire",
+"month": "2016-07"
+},
+{
+"v": 13.6,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 22.4,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 14.24,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 44.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 36.0,
+"label": "coincident",
+"month": "2016-07"
+},
+{
+"v": 20.8,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 1.7,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 7.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 136.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 200.0,
+"label": "coincident",
+"month": "2016-07"
+},
+{
+"v": 230.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 192.0,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 55.0,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 52.8,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 23.0,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 14.8,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 365.0,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 6.4,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 1.6,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 9.6,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 28.8,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 300.0,
+"label": "desire",
+"month": "2016-07"
+},
+{
+"v": 137.6,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 105.0,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 5.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 28.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 125.0,
+"label": "drift",
+"month": "2016-07"
+},
+{
+"v": 500.0,
+"label": "unresolved",
+"month": "2016-07"
+},
+{
+"v": 180.0,
+"label": "unresolved",
+"month": "2016-10"
+},
+{
+"v": 60.0,
+"label": "unresolved",
+"month": "2016-10"
+},
+{
+"v": 52.0,
+"label": "drift",
+"month": "2016-10"
+},
+{
+"v": 80.0,
+"label": "unresolved",
+"month": "2016-10"
+},
+{
+"v": 400.0,
+"label": "unresolved",
+"month": "2016-11"
+},
+{
+"v": 350.0,
+"label": "unresolved",
+"month": "2016-11"
+},
+{
+"v": 2000.0,
+"label": "unresolved",
+"month": "2016-11"
+},
+{
+"v": 250.0,
+"label": "unresolved",
+"month": "2016-11"
+},
+{
+"v": 320.0,
+"label": "unresolved",
+"month": "2016-11"
+},
+{
+"v": 37.0,
+"label": "unresolved",
+"month": "2016-11"
+},
+{
+"v": 51.0,
+"label": "drift",
+"month": "2016-12"
+},
+{
+"v": 46.0,
+"label": "drift",
+"month": "2017-01"
+},
+{
+"v": 9.0,
+"label": "unresolved",
+"month": "2017-01"
+},
+{
+"v": 11.2,
+"label": "drift",
+"month": "2017-01"
+},
+{
+"v": 106.38,
+"label": "drift",
+"month": "2017-01"
+},
+{
+"v": 68.0,
+"label": "drift",
+"month": "2017-01"
+},
+{
+"v": 19.2,
+"label": "drift",
+"month": "2017-02"
+},
+{
+"v": 13.0,
+"label": "unresolved",
+"month": "2017-02"
+},
+{
+"v": 640.0,
+"label": "unresolved",
+"month": "2017-03"
+},
+{
+"v": 4.0,
+"label": "desire",
+"month": "2017-04"
+},
+{
+"v": 3.0,
+"label": "unresolved",
+"month": "2017-04"
+},
+{
+"v": 240.0,
+"label": "drift",
+"month": "2017-05"
+},
+{
+"v": 100.0,
+"label": "unresolved",
+"month": "2017-08"
+},
+{
+"v": 38.0,
+"label": "drift",
+"month": "2017-11"
+},
+{
+"v": 720.0,
+"label": "unresolved",
+"month": "2018-02"
+},
+{
+"v": 160.0,
+"label": "coincident",
+"month": "2018-02"
+},
+{
+"v": 66.0,
+"label": "drift",
+"month": "2018-02"
+},
+{
+"v": 608.0,
+"label": "unresolved",
+"month": "2018-02"
+},
+{
+"v": 75.0,
+"label": "unresolved",
+"month": "2018-06"
+},
+{
+"v": 600.0,
+"label": "unresolved",
+"month": "2018-07"
+},
+{
+"v": 288.0,
+"label": "unresolved",
+"month": "2018-11"
+},
+{
+"v": 128.0,
+"label": "unresolved",
+"month": "2018-11"
+},
+{
+"v": 112.0,
+"label": "unresolved",
+"month": "2018-12"
+},
+{
+"v": 90.0,
+"label": "drift",
+"month": "2019-02"
+},
+{
+"v": 1500.0,
+"label": "drift",
+"month": "2019-03"
+},
+{
+"v": 144.0,
+"label": "drift",
+"month": "2019-03"
+},
+{
+"v": 11.0,
+"label": "unresolved",
+"month": "2019-04"
+},
+{
+"v": 98.0,
+"label": "drift",
+"month": "2019-05"
+},
+{
+"v": 21.0,
+"label": "unresolved",
+"month": "2019-06"
+},
+{
+"v": 208.0,
+"label": "drift",
+"month": "2021-04"
+},
+{
+"v": 196.0,
+"label": "unresolved",
+"month": "2021-07"
+},
+{
+"v": 120.0,
+"label": "unresolved",
+"month": "2021-07"
+},
+{
+"v": 256.0,
+"label": "unresolved",
+"month": "2021-08"
+},
+{
+"v": 220.0,
+"label": "unresolved",
+"month": "2021-08"
+},
+{
+"v": 264.0,
+"label": "drift",
+"month": "2021-08"
+},
+{
+"v": 176.0,
+"label": "unresolved",
+"month": "2021-08"
+},
+{
+"v": 368.0,
+"label": "unresolved",
+"month": "2021-09"
+},
+{
+"v": 736.0,
+"label": "drift",
+"month": "2021-10"
+},
+{
+"v": 832.0,
+"label": "drift",
+"month": "2021-10"
+},
+{
+"v": 96.0,
+"label": "unresolved",
+"month": "2022-04"
+},
+{
+"v": 43.0,
+"label": "unresolved",
+"month": "2023-12"
+},
+{
+"v": 33.0,
+"label": "unresolved",
+"month": "2024-02"
+},
+{
+"v": 81.0,
+"label": "censored",
+"month": "2025-11"
+},
+{
+"v": 114.0,
+"label": "censored",
+"month": "2025-11"
+},
+{
+"v": 145.0,
+"label": "censored",
+"month": "2026-10"
+},
+{
+"v": 800.0,
+"label": "censored",
+"month": "2026-11"
+}
+]
+}

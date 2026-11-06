@@ -1,0 +1,76 @@
+{
+ "_": "Every beat time for the SelfHeal vertical, in seconds at 30 fps. The cue sheet reads the same file.",
+ "fps": 30,
+ "total": 72,
+ "chapters": [
+  [
+   0,
+   "THE MOMENT"
+  ],
+  [
+   9,
+   "THE QUESTION"
+  ],
+  [
+   20,
+   "WHAT'S SOLVED"
+  ],
+  [
+   30,
+   "THE REAL PROBLEM"
+  ],
+  [
+   44,
+   "4 TESTS"
+  ],
+  [
+   61,
+   "YOUR TURN"
+  ]
+ ],
+ "moment": {
+  "in": 0,
+  "lines": 0.6,
+  "step": 0.3,
+  "again": 3.4,
+  "again2": 5.0,
+  "tally": 6.6
+ },
+ "question": {
+  "in": 9,
+  "ask": 9.3,
+  "path": 12.4,
+  "named": 12.8,
+  "paved": 16.5
+ },
+ "solved": {
+  "in": 20,
+  "grid": 20.5,
+  "step": 0.025,
+  "num": 24.7,
+  "line": 25.4
+ },
+ "problem": {
+  "in": 30,
+  "dots": 30.3,
+  "light": 32.6,
+  "cards": 37.0,
+  "reveal": 40.2
+ },
+ "tests": {
+  "in": 44,
+  "rows": [
+   44.5,
+   48.5,
+   52.5,
+   56.5
+  ]
+ },
+ "close": {
+  "in": 61,
+  "q": 63.6,
+  "dh": 68.0,
+  "link": "LINK GOES HERE"
+ },
+ "duration": 72
+}

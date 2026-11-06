@@ -69,6 +69,20 @@
    "2018-02"
   ]
  ],
+ "pair_48px": {
+  "month": "2016-02",
+  "uses": 3,
+  "files": 3,
+  "label": "desire",
+  "tokened": "2018-02"
+ },
+ "pair_42px": {
+  "month": "2016-02",
+  "uses": 3,
+  "files": 3,
+  "label": "drift",
+  "tokened": null
+ },
  "clusters_match_saved": true,
  "synth_ambiguous_bind_correct": "189/191",
  "synth_ambiguous_bind_acc": 0.99,

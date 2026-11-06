@@ -47,6 +47,9 @@ lab = Counter(c["label"] for c in C)
 out["carbon_clusters"] = len(C)
 out["carbon_cluster_labels"] = dict(lab)
 out["carbon_desire_values"] = sorted((c["value"], c["month"], c["tokened"]) for c in C if c["label"] == "desire")
+for v in (48.0, 42.0):  # the side-by-side pair: same month, same counts, different outcomes
+    c = next(c for c in C if c["value"] == v)
+    out[f"pair_{int(v)}px"] = dict(month=c["month"], uses=c["n"], files=c["files"], label=c["label"], tokened=c["tokened"])
 saved = json.load(open("../data/mined/clusters.json"))
 out["clusters_match_saved"] = [(c["value"], c["label"]) for c in C] == [(c["value"], c["label"]) for c in saved]
 
