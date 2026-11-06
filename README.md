@@ -48,7 +48,8 @@ Read the results with these limits in mind:
   3+ files), 5 of them arrived together when Carbon introduced its spacing scale in January 2018. Values mostly earn
   tokens in batches, when a team builds or rebuilds its scale and codifies what people already type.
 - **How common a value is predicts whether it gets codified**: its share of all hand-typed values scores 0.87 AUC
-  across Carbon and EUI (11 tokens vs 42 drift), and being on the 4px grid scores 0.74. History signals still didn't help.
+  across Carbon and EUI (11 tokens vs 42 drift), and being on the 4px grid scores 0.74. (History signals are not yet
+  re-tested under these labels.)
 - **GitLab UI had nothing to mine**: it styles with utility classes, so hand-typed values never pile up.
 
 Details: [`notes/step5.md`](notes/step5.md), rules in [`docs/mining.md`](docs/mining.md).
