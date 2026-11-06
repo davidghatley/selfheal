@@ -27,13 +27,13 @@ That was a desire path: the system caught up. The question this repo tests is wh
 
 | Test | Data | Result | Verdict |
 |---|---|---|---|
-| Snap a stray value to the right token | 157 real fixes mined from Carbon | Nearest token = what the human picked, **153 of 157 (97.5%)** | Solved. Plain nearest-token does it; context added nothing. |
+| Snap a stray value to the right token | 157 real fixes mined from Carbon; 103 off-scale fixes across 10 systems | Nearest token = what the human picked, **153 of 157** in Carbon (134 were exact matches); **82%** on values genuinely off the scale | Solved for exact matches; ~4 in 5 for real near-misses. Context added nothing. |
 | Same, for values halfway between two tokens | synthetic (5 generated repos) | **189 of 191** right when the model commits to a token | Solved |
 | Tell a slip from a future token | 116 repeating off-spec values in Carbon | 7 became tokens. Calling every repeat "a new token" is right **13%** of the time (55% on synthetic) | **Open** |
 | Add history: was it added in a burst, by few authors, did it survive? | Carbon + simulated history | Helped on simulated history (55% → 87%), **near chance on Carbon (13% → 14%)** | **Open** |
 | Frontier coding agents on the whole task | synthetic, 5 repos, sandboxed | Opus 5.5 **96.9%**, Codex 91.4%, our model 89.7%, Sonnet 5.5 84.4% | The best agents already beat a purpose-built model |
 
-**Takeaway:** fixing slips is solved, and the best agents already do it well. Knowing when a repeated value deserves
+**Takeaway (Carbon only; see the 15-system update below):** fixing slips is mostly solved, and the best agents already do it well. Knowing when a repeated value deserves
 a token is still open: nothing in the code or its history predicted Carbon's 7 desire paths better than guessing.
 
 Read the results with these limits in mind:
