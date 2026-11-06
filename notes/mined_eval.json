@@ -1,0 +1,31 @@
+{
+ "exact": {
+  "n": 134,
+  "exact": 1.0,
+  "nearest": 1.0,
+  "mixture+context": 0.985
+ },
+ "near": {
+  "n": 23,
+  "exact": 0.0,
+  "nearest": 0.826,
+  "mixture+context": 0.826
+ },
+ "changed": {
+  "n": 35,
+  "exact": 0.0,
+  "nearest": 0.2,
+  "mixture+context": 0.2
+ },
+ "exact+near": {
+  "n": 157,
+  "exact": 0.854,
+  "nearest": 0.975,
+  "mixture+context": 0.962
+ },
+ "ctx_minus_nearest_ci95": [
+  -0.075,
+  0.0
+ ],
+ "n_commits": 20
+}

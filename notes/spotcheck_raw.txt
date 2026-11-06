@@ -1,0 +1,370 @@
+### 1 idx=77 6097d155 2019-11-12 unresolved | padding-right: rem(50px) -> $spacing-09 + $spacing-03 | lit=['px', 50.0] tok=None
+subject: fix(select): resolve Firefox specific alignment and invalid state issues (#4465)
+file: packages/components/src/components/select/_select.scss
+@@ -204,42 +198,33 @@
+     color: $text-01;
+     border-bottom: none;
+     padding-left: $carbon--spacing-03;
+-    padding-right: rem(26px);
++    padding-right: $spacing-07;
++  }
+ 
+-    @-moz-document url-prefix() {
+-      padding-top: 0;
+-    }
+-
+-    &:hover {
+-      background-color: $hover-ui;
+-    }
++  .#{$prefix}--select--inline .#{$prefix}--select-input[disabled],
++  .#{$prefix}--select--inline .#{$prefix}--select-input[disabled]:hover {
++    background-color: $disabled-background-color;
+   }
+ 
+   .#{$prefix}--select--inline .#{$prefix}--select__arrow {
+-    bottom: auto;
+
+### 2 idx=133 142f1138 2018-01-24 exact | margin-right: rem(16px) -> $spacing-md | lit=['px', 16.0] tok=['px', 16.0]
+subject: feat(components): Add spacing variables to remaining components (#525)
+file: src/components/tabs/_tabs.scss
+@@ -75,8 +77,8 @@
+     @include breakpoint(bp--sm--major) {
+       @include typescale('epsilon');
+       flex-direction: row;
+-      margin-right: rem(16px);
+-      margin-left: rem(16px);
++      margin-right: $spacing-md;
++      margin-left: $spacing-md;
+       background: none;
+       box-shadow: none;
+     }
+
+### 3 idx=51 44224755 2020-06-24 unresolved | width: rem(48px) -> $input-xl-height | lit=['px', 48.0] tok=None
+subject: feat(components): support alternate container tokens (#6185)
+file: packages/components/src/components/number-input/_number-input.scss
+@@ -223,17 +225,17 @@
+ 
+   // Size Variant styles
+   .#{$prefix}--number--xl input[type='number'] {
+-    height: rem(48px);
++    height: $input-xl-height;
+   }
+ 
+   .#{$prefix}--number--xl .#{$prefix}--number__control-btn {
+-    height: rem(24px);
++    height: calc(#{$input-xl-height} / 2);
+   }
+ 
+   .#{$prefix}--number--xl.#{$prefix}--number--mobile
+     .#{$prefix}--number__control-btn {
+-    height: rem(48px);
+-    width: rem(48px);
++    height: $input-xl-height;
++    width: $input-xl-height;
+   }
+ 
+   .#{$prefix}--number--xl .#{$prefix}--number__control-btn.up-icon svg {
+
+### 4 idx=167 a6aead8a 2018-01-23 exact | margin-left: rem(12px) -> $spacing-sm | lit=['px', 12.0] tok=['px', 12.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/data-table-v2/_data-table-v2-action.scss
+@@ -56,8 +56,8 @@
+   }
+ 
+   ~ .#{$prefix}--btn {
+-    margin-left: rem(12px);
+-    margin-right: rem(2px);
++    margin-left: $spacing-sm;
++    margin-right: $spacing-sm;
+   }
+ }
+ 
+
+### 5 idx=86 96978163 2019-07-26 changed | right: rem(40px) -> $carbon--spacing-05 | lit=['px', 40.0] tok=['px', 16.0]
+subject: fix(password-input): reposition toggle button and recolor icon (#3553)
+file: packages/components/src/components/text-input/_text-input.scss
+@@ -45,7 +45,7 @@
+   }
+ 
+   .#{$prefix}--password-input {
+-    padding-right: rem(40px);
++    padding-right: $carbon--spacing-08;
+   }
+ 
+   .#{$prefix}--text-input::-webkit-input-placeholder {
+
+### 6 idx=13 0ca1a63f 2024-04-10 exact | inset-inline-end: convert.to-rem(96px) -> $spacing-12 | lit=['px', 96.0] tok=['px', 96.0]
+subject: fix(15859,16095): Added divider to NumberInput,Unintended Divider/Outline removed, Avoids magic numb
+file: packages/styles/scss/components/number-input/_number-input.scss
+@@ -295,7 +301,7 @@
+   .#{$prefix}--number__invalid {
+     position: absolute;
+     fill: $support-error;
+-    inset-inline-end: convert.to-rem(96px);
++    inset-inline-end: $spacing-12;
+   }
+ 
+   .#{$prefix}--number--lg .#{$prefix}--number__invalid {
+
+### 7 idx=210 a6aead8a 2018-01-23 exact | margin-top: 1rem -> $spacing-md | lit=['px', 16.0] tok=['px', 16.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/notification/_inline-notification.scss
+@@ -20,11 +21,11 @@
+     display: flex;
+     justify-content: space-between;
+     background-color: transparent;
+-    padding: 0.75rem 1rem;
++    padding: $spacing-sm $spacing-md;
+     min-height: rem(40px);
+     color: $text-03;
+-    margin-top: 1rem;
+-    margin-bottom: 1rem;
++    margin-top: $spacing-md;
++    margin-bottom: $spacing-md;
+   }
+ 
+   .#{$prefix}--inline-notification--error {
+
+### 8 idx=208 a6aead8a 2018-01-23 exact | padding: 0.75rem -> $spacing-sm | lit=['px', 12.0] tok=['px', 12.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/notification/_inline-notification.scss
+@@ -20,11 +21,11 @@
+     display: flex;
+     justify-content: space-between;
+     background-color: transparent;
+-    padding: 0.75rem 1rem;
++    padding: $spacing-sm $spacing-md;
+     min-height: rem(40px);
+     color: $text-03;
+-    margin-top: 1rem;
+-    margin-bottom: 1rem;
++    margin-top: $spacing-md;
++    margin-bottom: $spacing-md;
+   }
+ 
+   .#{$prefix}--inline-notification--error {
+
+### 9 idx=38 d45f4661 2021-01-19 changed | right: 0.5rem -> $carbon--spacing-05 | lit=['px', 8.0] tok=['px', 16.0]
+subject: feat(Tile): add optional expand/collapse labels for chevron (#7199)
+file: packages/components/src/components/tile/_tile.scss
+@@ -105,11 +105,14 @@
+ 
+   .#{$prefix}--tile__chevron {
+     position: absolute;
+-    right: 0.5rem;
+-    bottom: 0.5rem;
++    right: $carbon--spacing-05;
++    bottom: $carbon--spacing-05;
++    display: flex;
++    align-items: flex-end;
+     height: 1rem;
+ 
+     svg {
++      margin-left: $carbon--spacing-03;
+       transform-origin: center;
+       transition: $duration--fast-02 motion(standard, productive);
+       fill: $ui-05;
+
+### 10 idx=52 44224755 2020-06-24 unresolved | height: rem(32px) -> $input-sm-height | lit=['px', 32.0] tok=None
+subject: feat(components): support alternate container tokens (#6185)
+file: packages/components/src/components/number-input/_number-input.scss
+@@ -245,17 +247,17 @@
+   }
+ 
+   .#{$prefix}--number--sm input[type='number'] {
+-    height: rem(32px);
++    height: $input-sm-height;
+   }
+ 
+   .#{$prefix}--number--sm .#{$prefix}--number__control-btn {
+-    height: rem(16px);
++    height: calc(#{$input-sm-height} / 2);
+   }
+ 
+   .#{$prefix}--number--sm.#{$prefix}--number--mobile
+     .#{$prefix}--number__control-btn {
+-    height: rem(32px);
+-    width: rem(32px);
++    height: $input-sm-height;
++    width: $input-sm-height;
+   }
+ 
+   .#{$prefix}--number--sm .#{$prefix}--number__control-btn.up-icon svg {
+
+### 11 idx=64 8b01b312 2020-06-12 unresolved | color: #393939 -> $text-04 | lit=['color', '#393939'] tok=None
+subject: fix(date-picker): apply disabled styles to disabled input elements (#6248)
+file: packages/components/src/components/date-picker/_flatpickr.scss
+@@ -85,747 +100,401 @@
+ .flatpickr-calendar.noCalendar.hasTime .flatpickr-time {
+   height: auto;
+ }
+-.flatpickr-calendar:before,
+-.flatpickr-calendar:after {
+-  position: absolute;
+-  display: block;
+-  pointer-events: none;
+-  border: solid transparent;
+-  content: '';
+-  height: 0;
+-  width: 0;
+-  left: 22px;
+-}
+-.flatpickr-calendar.rightMost:before,
+-.flatpickr-calendar.rightMost:after {
+-  left: auto;
+-  right: 22px;
+-}
+-.flatpickr-calendar:before {
+-  border-width: 5px;
+
+### 12 idx=163 a6aead8a 2018-01-23 exact | padding-top: rem(8px) -> $spacing-xs | lit=['px', 8.0] tok=['px', 8.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/data-table-v2/_data-table-v2-action.scss
+@@ -1,7 +1,7 @@
+ .#{$prefix}--table-toolbar {
+   display: flex;
+-  padding-top: rem(8px);
+-  padding-bottom: rem(8px);
++  padding-top: $spacing-xs;
++  padding-bottom: $spacing-xs;
+   width: 100%;
+   position: relative;
+ 
+
+### 13 idx=242 e22081a0 2018-01-19 near | margin-top: rem(6px) -> $spacing-xs | lit=['px', 6.0] tok=['px', 8.0]
+subject: feat: Add spacing to form components (#514)
+file: src/components/radio-button/_radio-button.scss
+@@ -14,7 +15,7 @@
+   .#{$prefix}--radio-button-group {
+     display: flex;
+     align-items: center;
+-    margin-top: rem(6px);
++    margin-top: $spacing-xs;
+   }
+ 
+   .#{$prefix}--radio-button {
+
+### 14 idx=230 e22081a0 2018-01-19 changed | margin-top: rem(20px) -> $spacing-lg | lit=['px', 20.0] tok=['px', 24.0]
+subject: feat: Add spacing to form components (#514)
+file: src/components/file-uploader/_file-uploader.scss
+@@ -28,14 +29,13 @@
+     @include typescale('zeta');
+     @include line-height('body');
+     color: $text-02;
+-    margin-top: 0.25rem;
+-    margin-bottom: 1.25rem;
++    margin-bottom: $spacing-lg;
+   }
+ 
+   .#{$prefix}--file-container {
+     display: block;
+     width: 100%;
+-    margin-top: rem(20px);
++    margin-top: $spacing-lg;
+   }
+ 
+   .#{$prefix}--file__selected-file {
+
+### 15 idx=106 2424b710 2019-03-13 exact | padding-bottom: rem(12px) -> $spacing-sm | lit=['px', 12.0] tok=['px', 12.0]
+subject: fix(dropdown): match experimental spec (#1994)
+file: src/components/dropdown/_dropdown.scss
+@@ -303,25 +327,20 @@
+     fill: $ui-05;
+     position: absolute;
+     right: 1rem;
+-    top: rem(17px);
+-    width: rem(10px);
+-    height: rem(6px);
++    top: rem(13px);
+     pointer-events: none;
+     transition: transform $transition--expansion $carbon--standard-easing;
+     transform-origin: 50% 45%;
+   }
+ 
+-  .#{$prefix}--dropdown[data-value=''] .#{$prefix}--dropdown-text {
+-    color: $text-01;
+-  }
+-
+   .#{$prefix}--dropdown-text {
++    @include type-style('body-short-01');
+     display: flex;
+     align-items: center;
+     height: rem(40px);
+
+### 16 idx=102 ccebbfce 2019-03-22 exact | padding: 1rem -> $carbon--spacing-05 | lit=['px', 16.0] tok=['px', 16.0]
+subject: fix(list-box): match experimental spec (#2181)
+file: src/components/list-box/_list-box.scss
+@@ -408,7 +486,7 @@ $list-box-menu-width: rem(300px);
+     display: inline-flex;
+     align-items: center;
+     height: rem(40px);
+-    padding: 0 2rem 0 1rem;
++    padding: 0 $carbon--spacing-09 0 $carbon--spacing-05;
+     cursor: pointer;
+     outline: none;
+     border-bottom: 1px solid $ui-04;
+
+### 17 idx=162 a6aead8a 2018-01-23 exact | padding: 2rem -> $spacing-xl | lit=['px', 32.0] tok=['px', 32.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/content-switcher/_content-switcher.scss
+@@ -20,7 +21,7 @@
+     background-color: transparent;
+     display: flex;
+     align-items: center;
+-    padding: 0 2rem;
++    padding: 0 $spacing-xl;
+     margin: 0;
+     text-decoration: none;
+     border: 1px solid $brand-01;
+
+### 18 idx=171 a6aead8a 2018-01-23 exact | padding: rem(12px) -> $spacing-sm | lit=['px', 12.0] tok=['px', 12.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/data-table-v2/_data-table-v2-action.scss
+@@ -29,8 +29,8 @@
+ .#{$prefix}--toolbar-action {
+   @include button-reset;
+   cursor: pointer;
+-  padding-left: rem(12px);
+-  padding-right: rem(12px);
++  padding-left: $spacing-sm;
++  padding-right: $spacing-sm;
+ 
+   &:hover {
+     > .#{$prefix}--toolbar-action__icon {
+
+### 19 idx=168 a6aead8a 2018-01-23 changed | margin-right: rem(2px) -> $spacing-sm | lit=['px', 2.0] tok=['px', 12.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/data-table-v2/_data-table-v2-action.scss
+@@ -56,8 +56,8 @@
+   }
+ 
+   ~ .#{$prefix}--btn {
+-    margin-left: rem(12px);
+-    margin-right: rem(2px);
++    margin-left: $spacing-sm;
++    margin-right: $spacing-sm;
+   }
+ }
+ 
+
+### 20 idx=218 a6aead8a 2018-01-23 exact | padding-bottom: 0.125rem -> $spacing-3xs | lit=['px', 2.0] tok=['px', 2.0]
+subject: feat: Add spacing variables (#522)
+file: src/components/notification/_toast-notification.scss
+@@ -79,14 +77,14 @@
+     font-weight: 600;
+     letter-spacing: 0;
+     line-height: 1;
+-    padding-bottom: 0.125rem;
++    padding-bottom: $spacing-3xs;
+   }
+ 
+   .#{$prefix}--toast-notification__subtitle {
+     @include typescale('omega');
+     color: $text-03;
+     margin-top: 0;
+-    margin-bottom: 1rem;
++    margin-bottom: $spacing-md;
+     line-height: 1.2;
+   }
+ 
+
