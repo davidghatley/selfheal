@@ -23,7 +23,7 @@ against git by `share/recheck_mined.py`). The video reads `claims.json` directly
 | 05.2 | Synthetic: 55% | test 02 | `src/detect.py` mixture + context `new_P`, mean of 5 seeds | 0.551 | ✅ |
 | 05.3 | Simulated history: 55% → 87% | test 03 | `src/simhist.py` votes filter on the same 5 seeds (history is simulated, not data) | 0.551 → 0.870 | ✅ labelled "SIM." |
 | 05.3 | Carbon: 13% → 14% | test 03 | `src/timefeat_carbon.py` pre-specified votes precision vs base rate | 0.130 → 0.136 | ✅ |
-| 05.4 | Opus 5.5 96.9%, Codex 91.4%, our model 89.7%, Sonnet 5.5 84.4% | test 04 bars and note | agent `actions.json` in the step-4 workdirs (scratchpad `agents2/full-*`) scored by `src/score.py`; model = mixture + context | 0.969 / 0.914 / 0.897 / 0.844 | ✅ synthetic, labelled; workdirs are outside the repo (note 3) |
+| 05.4 | Opus 5.5 96.9%, Codex 91.4%, our model 89.7%, Sonnet 5.5 84.4% | test 04 bars and note | `notes/agents2/full-*.json` (each run's actions) scored by `src/score.py`; model = mixture + context | 0.969 / 0.914 / 0.897 / 0.844 | ✅ synthetic, labelled |
 
 Numbers kept off screen on purpose: AUC (0.71 → 0.61 on Carbon) because the audience doesn't use it; the 20%
 spot-check error on mined labels, which applies mostly to the "value changed" labels the 157 exclude.
@@ -34,5 +34,3 @@ spot-check error on mined labels, which applies mostly to the "value changed" la
    over the "3 uses" threshold. Re-mining without `.css` would change the 116; that hasn't been done.
 2. `notes/reliability_ambiguous.json` had no producing script; the 189/191 is now recomputed in `recompute.py`.
    The doc's "98.9%" should read 99.0% (or 189 of 191).
-3. The agent outputs live in the session scratchpad, not the repo. If that directory goes, test 04 can't be
-   recomputed; copy `agents2/*/actions.json` into `data/` if the figure needs to stay reproducible.

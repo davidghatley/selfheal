@@ -38,7 +38,7 @@ const FOOT: string[] = [
   `SOURCE · ${K.carbon_fix_labels} DRIFT FIXES IN ${K.carbon_fix_commits} CARBON COMMITS · LITERAL REPLACED BY A TOKEN`,
   'SOURCE · CARBON · A VALUE NO TOKEN HAS, USED 3+ TIMES IN 2+ FILES · OUTCOME 24 MONTHS LATER',
   'SYNTHETIC = 5 GENERATED REPOS · CARBON = REAL HISTORY · SELFHEAL RESEARCH',
-  'SELFHEAL · SELF-HEALING DESIGN SYSTEMS RESEARCH',
+  'SELFHEAL · OPEN SOURCE · MIT · GITHUB.COM/DAVIDGHATLEY/SELFHEAL',
 ];
 
 const Chrome: React.FC<{t: number}> = ({t}) => {
@@ -341,12 +341,21 @@ const Close: React.FC<{t: number}> = ({t}) => {
       ))}
       {q && on(t, c.q + 1.8) && at(1240, (
         <div style={{display: 'flex', alignItems: 'center', gap: 24}}>
-          <div style={{width: 24, height: 24, background: P.vermilion}} />
-          <span style={{fontFamily: F.mono, fontSize: 36, lineHeight: '44px', color: P.ink}}>{c.link}</span>
+          <SelfGlyph cell={12} n={cells(t, c.q + 1.8, 12)} />
+          <span style={{fontFamily: F.mono, fontSize: 36, lineHeight: '44px', color: P.ink}}><TypeOn text={c.link} t={t} t0={c.q + 1.9} rate={0.03} /></span>
         </div>
       ))}
     </>
   );
+};
+
+/** The selfheal glyph (assets/glyph.svg): a paved L in cobalt with the worn diagonal in vermilion, built cell by cell. */
+const SELF = ['....P', '...WP', '..W.P', '.W..P', 'PPPPP'];
+const SelfGlyph: React.FC<{cell: number; n?: number}> = ({cell, n = 99}) => {
+  const pts = SELF.flatMap((r, y) => [...r].map((ch, x) => (ch === '.' ? null : [x, y, ch]))).filter(Boolean) as [number, number, string][];
+  // the paved L first (along the bottom, then up), then the shortcut
+  pts.sort((a, b) => (a[2] === b[2] ? (a[2] === 'P' ? (a[1] === 4 && b[1] === 4 ? a[0] - b[0] : b[1] - a[1]) : b[1] - a[1]) : a[2] === 'P' ? -1 : 1));
+  return <svg width={cell * 5} height={cell * 5} shapeRendering="crispEdges">{pts.slice(0, n).map(([x, y, ch]) => <rect key={`${x}-${y}`} x={x * cell} y={y * cell} width={cell} height={cell} fill={ch === 'P' ? P.cobalt : P.vermilion} />)}</svg>;
 };
 
 const MARK = ['...X...', '...X...', '...X...', 'XXXXXXX', 'X..X..X', 'X..X..X', 'XXXX..X'];
@@ -364,7 +373,10 @@ const DhCard: React.FC<{t: number}> = ({t}) => {
       <div style={{textAlign: 'center', opacity: on(t, t0 + 1.2) ? 1 : 0}}>
         <div style={{fontFamily: F.text, fontWeight: 700, fontSize: 56, lineHeight: '64px', color: P.ink}}>David Hatley</div>
         <div style={{...sig, fontSize: 28, lineHeight: '36px', marginTop: 12}}>design · AI/ML · generative tools</div>
-        <div style={{...label, marginTop: 48}}>{tl.close.link}</div>
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, marginTop: 48}}>
+          <SelfGlyph cell={6} />
+          <span style={{fontFamily: F.mono, fontSize: 28, lineHeight: '36px', color: P.ink}}>{tl.close.link}</span>
+        </div>
       </div>
     </AbsoluteFill>
   );

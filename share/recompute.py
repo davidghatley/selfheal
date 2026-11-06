@@ -1,7 +1,7 @@
 """Recompute every number that goes on screen in the share video, from the repo's data, not from saved summaries.
 Run from src/:  cd src && ../.venv/bin/python ../share/recompute.py
 Writes share/claims.json (claim id -> recomputed value) and prints a table.
-Agent results need the step-4 agent workdirs (path in AGENTS2 below); they are skipped if missing.
+Agent results come from notes/agents2/ (each run's actions, committed in step 4).
 """
 import json, os, statistics as st, sys
 from collections import Counter
@@ -14,7 +14,7 @@ from score import score
 from iterate import Model, run_variant, actions
 from clusters import clusters
 
-AGENTS2 = Path(os.environ.get("AGENTS2", "/tmp/claude-1000/-home-davidhatley-Projects/4e715895-1995-4f37-ad87-bef3d061a4a6/scratchpad/agents2"))
+AGENTS2 = Path(os.environ.get("AGENTS2", "../notes/agents2"))  # each run's actions.json, copied in step 4
 SEEDS = "12345"
 out = {}
 
@@ -107,7 +107,7 @@ if AGENTS2.exists():
         acc = []
         for s in SEEDS:
             truth = json.load(open(f"../data/s{s}/truth.json"))
-            acc.append(score(truth, json.load(open(AGENTS2 / f"full-{arm}-s{s}" / "actions.json")))["action_acc"])
+            acc.append(score(truth, json.load(open(AGENTS2 / f"full-{arm}-s{s}.json")))["action_acc"])
         out[f"agent_{arm}_action_acc"] = round(st.mean(acc), 3)
 else:
     print("agent workdirs missing:", AGENTS2, file=sys.stderr)
