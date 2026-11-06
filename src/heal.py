@@ -74,7 +74,7 @@ def iterative(repo, work, frac=0.25):
         todo = [s for s in lits(sites) if governed(s) and s["id"] not in final]
         if not todo:
             break
-        acts = mixture(tokens, sites)
+        acts = mixture(tokens, sites, min_group=10**9)  # spec evolution was decided once, up front; re-deciding it on the shrinking literal set was the old bug
         todo.sort(key=lambda s: entropy(s, sp, bound, elems))
         commit = todo[:max(1, int(len(todo) * frac))]
         step = {s["id"]: acts[s["id"]] for s in commit if acts[s["id"]].startswith("bind:")}
