@@ -41,6 +41,18 @@ Read the results with these limits in mind:
 - The **synthetic benchmark was written by the same person as the model**, so it flatters the model. Carbon is the headline.
 - Mined labels are not perfect: a hand check of 20 found 4 wrong (all in "value changed" labels, which the 157 exclude).
 
+### Update (6 Nov): three more design systems
+
+- **Fixing drift replicates** on Shopify Polaris (13 of 14) and Elastic EUI (6 of 6). Small samples.
+- **Carbon's "7 desire paths" were mostly one decision.** With a stricter definition of a token (a variable shared by
+  3+ files), 5 of them arrived together when Carbon introduced its spacing scale in January 2018. Values mostly earn
+  tokens in batches, when a team builds or rebuilds its scale and codifies what people already type.
+- **How common a value is predicts whether it gets codified**: its share of all hand-typed values scores 0.87 AUC
+  across Carbon and EUI (11 tokens vs 42 drift), and being on the 4px grid scores 0.74. History signals still didn't help.
+- **GitLab UI had nothing to mine**: it styles with utility classes, so hand-typed values never pile up.
+
+Details: [`notes/step5.md`](notes/step5.md), rules in [`docs/mining.md`](docs/mining.md).
+
 The full write-up, with the reasoning and related work, is the "Self-Healing Design Systems" doc; `PLAN.md` logs every
 decision with its date.
 

@@ -3,8 +3,8 @@
 **Question:** does the Carbon result hold elsewhere, and can anything tell a future token from drift?
 
 1. **Fixing drift replicates, on small samples.** Nearest token = the human's choice: Carbon 153/157, Polaris 13/14,
-   EUI 6/6. Polaris and EUI rarely swap a single literal for a token in one commit (they migrated with codemods), so
-   few labels survive.
+   EUI 6/6. Few single-literal swaps survive in those histories (Polaris migrated with codemods, `polaris-migrator`;
+   EUI moved to CSS-in-JS), so the samples are small.
 2. **Carbon's "7 desire paths" were mostly one decision.** With tokens defined as shared variables, 5 of Carbon's
    token-earning values arrived together in the Jan 2018 spacing scale (PR #506). Only 2px was added on its own. The
    v1 labels also counted component-local variables as tokens. The video's "7 became tokens" is true of v1 labels
