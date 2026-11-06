@@ -1,0 +1,97 @@
+{
+ "system": "mdc-web",
+ "mined": 149,
+ "skipped": {
+  "not a resolvable positive length": 148,
+  "token value not on the shared scale": 4
+ },
+ "kinds": {
+  "exact": 3,
+  "changed": 2
+ },
+ "exact+near": {
+  "n": 3,
+  "commits": 2,
+  "authors": 2,
+  "nearest_correct": 3,
+  "exact_correct": 3
+ },
+ "near only": {
+  "n": 0,
+  "nearest_correct": 0,
+  "context_correct": 0,
+  "with_context": 0
+ },
+ "rows": [
+  {
+   "commit": "bc104bae7c",
+   "date": "2021-04-15",
+   "author": "abhiomkar@google.com",
+   "file": "packages/mdc-button/_button-base.scss",
+   "prop": "height",
+   "lit": 18.0,
+   "tok": 18.0,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true,
+   "ctx_n": 0,
+   "context": true
+  },
+  {
+   "commit": "bc104bae7c",
+   "date": "2021-04-15",
+   "author": "abhiomkar@google.com",
+   "file": "packages/mdc-button/_button-base.scss",
+   "prop": "font-size",
+   "lit": 18.0,
+   "tok": 18.0,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true,
+   "ctx_n": 0,
+   "context": true
+  },
+  {
+   "commit": "8602f1b4da",
+   "date": "2020-06-22",
+   "author": "allanchen@google.com",
+   "file": "packages/mdc-dom/_mixins.scss",
+   "prop": "border",
+   "lit": 1.0,
+   "tok": 2.0,
+   "kind": "changed",
+   "exact": false,
+   "nearest": false,
+   "ctx_n": 0,
+   "context": false
+  },
+  {
+   "commit": "d1be0391a8",
+   "date": "2015-08-10",
+   "author": "sgomes@google.com",
+   "file": "src/textfield/_textfield.scss",
+   "prop": "font-size",
+   "lit": 16.0,
+   "tok": 16.0,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true,
+   "ctx_n": 0,
+   "context": true
+  },
+  {
+   "commit": "1df3396b5f",
+   "date": "2015-06-02",
+   "author": "jonathan@garbee.me",
+   "file": "src/card/_card.scss",
+   "prop": "padding",
+   "lit": 8.0,
+   "tok": 16.0,
+   "kind": "changed",
+   "exact": false,
+   "nearest": true,
+   "ctx_n": 2,
+   "context": true
+  }
+ ]
+}

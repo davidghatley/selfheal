@@ -1,0 +1,16 @@
+{
+ "all 15 systems": {
+  "n": 230,
+  "base": 0.317,
+  "top20_within_system": 0.511,
+  "top20_hits": "24/47",
+  "recall_top20": 0.329
+ },
+ "without semantic-ui": {
+  "n": 205,
+  "base": 0.244,
+  "top20_within_system": 0.429,
+  "top20_hits": "18/42",
+  "recall_top20": 0.36
+ }
+}

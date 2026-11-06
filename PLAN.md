@@ -14,6 +14,7 @@ heuristic drift detection, measure frontier agents on the same task, and test he
 - [x] Time features: help on simulated history (newP 0.55->0.87), not on Carbon (AUC 0.71 -> 0.61)
 - [x] Matched-tools agent rerun, 5 seeds: Opus 0.969, Codex 0.914, Sonnet 0.844; hybrid helps Sonnet only
 - [x] Step 5, more systems: drift fix replicates (Polaris 13/14, EUI 6/6); v2 labels show Carbon's desire paths were mostly one scale event; share of typed values predicts (AUC 0.87, Carbon+EUI) — notes/step5.md
+- [x] Step 6, 15 systems: near-miss snapping 82% (103 off-scale fixes, CI 71-91%), context adds nothing; prevalence predicts token-earning values across systems (held-out AUC 0.68-0.71), time history adds ~0 — notes/step6.md
 - [ ] Package the benchmark (synthetic + mined splits); Gemini CLI needs auth
 - [x] First write-up into the doc (2026-11-05)
 
@@ -25,3 +26,4 @@ heuristic drift detection, measure frontier agents on the same task, and test he
 - 2026-11-05: Mined Carbon labels are the headline; synthetic results are secondary (author overlap).
 - 2026-11-06: v2 mining rules (hand-written .scss only, tokens = vars used in >= 3 files, single vs scale-event outcomes); v1 Carbon numbers stay as the committed headline, v2 reported alongside.
 - 2026-11-06: Repo made public (MIT).
+- 2026-11-06: 'near' drift = off-scale literal only; Atlassian excluded (squashed bot mirror, codemod-driven tokenization).

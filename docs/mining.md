@@ -51,3 +51,11 @@ Counts (notes/grid_test.json):
 
 Drift-fix replication (exact + near, nearest token = the human's choice): Polaris 13 of 14 (7 commits;
 src/eval_polaris.py, scales by naming era), EUI 6 of 6 (3 commits; src/eval_scss.py). Both small.
+
+## Step 6: 15 systems (2026-11-06; notes/step6.md)
+- `desire_multi.py` reads SCSS `$x`, Less `@x` (also Semantic UI's `*.variables`) and CSS `--x` definitions; Less and
+  `var(--x, fallback)` are rewritten to the resolver's `$x` form. Resolver gained `n * $x`, `$x / n`, `math.div`, `+`/`-`.
+- `eval_multi.py`: drift fixes with a generic token pattern; **near** now means an OFF-scale literal within 2 px of the
+  chosen token (an on-scale value swapped for a neighbour is a design change, counted as changed).
+- `timefeat_v2.py`: time features from per-line `git blame` at the decision commit.
+- Counts per system: notes/pooled_v2.json (per_system) and notes/drift_multi/<system>.json. Hand check: notes/spotcheck_v2.md.

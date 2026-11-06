@@ -1,0 +1,70 @@
+{
+ "system": "foundation",
+ "mined": 168,
+ "skipped": {
+  "not a resolvable positive length": 168,
+  "token value not on the shared scale": 6
+ },
+ "kinds": {
+  "near": 1,
+  "changed": 1,
+  "exact": 1
+ },
+ "exact+near": {
+  "n": 2,
+  "commits": 2,
+  "authors": 2,
+  "nearest_correct": 1,
+  "exact_correct": 1
+ },
+ "near only": {
+  "n": 1,
+  "nearest_correct": 0,
+  "context_correct": 0,
+  "with_context": 1
+ },
+ "rows": [
+  {
+   "commit": "1b451c246c",
+   "date": "2015-08-10",
+   "author": "tdhartwick2@gmail.com",
+   "file": "scss/components/_range-slider.scss",
+   "prop": "width",
+   "lit": 14.0,
+   "tok": 16.0,
+   "kind": "near",
+   "exact": false,
+   "nearest": false,
+   "ctx_n": 1,
+   "context": false
+  },
+  {
+   "commit": "4ec8a4c8f8",
+   "date": "2015-07-30",
+   "author": "rafi@zurb.com",
+   "file": "scss/components/_switch.scss",
+   "prop": "margin-bottom",
+   "lit": 24.0,
+   "tok": 16.0,
+   "kind": "changed",
+   "exact": false,
+   "nearest": false,
+   "ctx_n": 0,
+   "context": false
+  },
+  {
+   "commit": "4ec8a4c8f8",
+   "date": "2015-07-30",
+   "author": "rafi@zurb.com",
+   "file": "scss/components/_switch.scss",
+   "prop": "margin-bottom",
+   "lit": 16.0,
+   "tok": 16.0,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true,
+   "ctx_n": 0,
+   "context": true
+  }
+ ]
+}

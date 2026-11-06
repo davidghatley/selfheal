@@ -16,6 +16,19 @@ REPOS = {
     "carbon": dict(path="/mnt/work/selfheal-repos/carbon", carbon_v11=True),
     "eui": dict(path="/mnt/work/selfheal-repos/eui"),
     "gitlab": dict(path="/mnt/work/selfheal-repos/gitlab-ui"),
+    "bootstrap": dict(path="/mnt/work/selfheal-repos/bootstrap", exts=("*.scss", "*.less")),
+    "primer-css": dict(path="/mnt/work/selfheal-repos/primer-css"),
+    "blueprint": dict(path="/mnt/work/selfheal-repos/blueprint"),
+    "mdc-web": dict(path="/mnt/work/selfheal-repos/mdc-web"),
+    "ant-design": dict(path="/mnt/work/selfheal-repos/ant-design", exts=("*.less",)),
+    "govuk-frontend": dict(path="/mnt/work/selfheal-repos/govuk-frontend"),
+    "uswds": dict(path="/mnt/work/selfheal-repos/uswds"),
+    "spectrum-css": dict(path="/mnt/work/selfheal-repos/spectrum-css", exts=("*.css",)),
+    "foundation": dict(path="/mnt/work/selfheal-repos/foundation"),
+    "patternfly": dict(path="/mnt/work/selfheal-repos/patternfly", exts=("*.scss", "*.css")),
+    "lightning": dict(path="/mnt/work/selfheal-repos/lightning"),
+    "clarity": dict(path="/mnt/work/selfheal-repos/clarity"),
+    "semantic-ui": dict(path="/mnt/work/selfheal-repos/semantic-ui", exts=("*.less", "*.variables", "*.overrides")),
 }
 SKIP = re.compile(r"(node_modules|/vendor/|^vendor/|/dist/|^dist/|/build/|flatpickr|\.min\.|(^|/)docs?/|doc_site|website|storybook|/examples?/|\.stories\.|/test/|__tests__)")
 MIN_REF_FILES = 3  # v2: a token is a shared variable, referenced from >= 3 files
@@ -39,35 +52,71 @@ def snapshots(R):
     return out
 
 
-def snap(R, c, carbon_v11=False):
+LESS_DEF = re.compile(r"^[ \t]*@([\w-]+)[ \t]*:[ \t]*([^;\n{}]+?)\s*;", re.M)
+CSS_DEF = re.compile(r"^[ \t]*--([\w-]+)[ \t]*:[ \t]*([^;\n{}]+?)\s*;", re.M)
+REF = re.compile(r"\$([a-zA-Z0-9_-]+)|(?<![\w@])@([a-zA-Z][\w-]*)|var\(\s*--([\w-]+)")
+
+
+def unify(expr):
+    """Less @x and CSS var(--x, fallback) -> the resolver's $x / $--x."""
+    expr = re.sub(r"var\(\s*--([\w-]+)\s*(?:,[^)]*)?\)", r"$--\1", expr)
+    return re.sub(r"(?<![\w@])@([a-zA-Z][\w-]*)", r"$\1", expr)
+
+
+def ref_names(body):
+    return [a or b or ("--" + c) for a, b, c in REF.findall(body)]
+
+
+def snap(R, c, carbon_v11=False, exts=("*.scss",)):
+    defs, tok = defs_tokens(R, c, exts)
+    return _snap(R, c, defs, tok, carbon_v11, exts)
+
+
+def defs_tokens(R, c, exts=("*.scss",)):
+    """All variable definitions at commit c (SCSS $x, Less @x, CSS --x; unified for resolve.value) and the shared
+    px tokens among them (referenced from >= MIN_REF_FILES files)."""
     defs = {}
-    raw = git(R, "grep", "-E", r"^\s*\$[a-zA-Z0-9_-]+\s*:", c, "--", "*.scss")
-    for line in raw.splitlines():
-        _, f, body = line.split(":", 2)
-        if SKIP.search(f):
-            continue
-        if mm := DEF.match(body):
-            defs.setdefault(mm.group(1), mm.group(2).strip())
+    patt = {"*.scss": (r"^\s*\$[a-zA-Z0-9_-]+\s*:", DEF, ""), "*.less": (r"^\s*@[a-zA-Z][a-zA-Z0-9_-]*\s*:", LESS_DEF, ""),
+            "*.css": (r"^\s*--[a-zA-Z0-9_-]+\s*:", CSS_DEF, "--")}
+    for ext in exts:
+        g, rx, pre = patt.get(ext, patt["*.less"])  # other extensions (Semantic UI's *.variables) are Less
+        for line in git(R, "grep", "-E", g, c, "--", ext).splitlines():
+            _, f, body = line.split(":", 2)
+            if SKIP.search(f):
+                continue
+            if mm := rx.match(body):
+                defs.setdefault(pre + mm.group(1), unify(mm.group(2).strip()))
+        if ext == "*.scss" and "*.css" in exts:  # custom properties set inside .scss too
+            for line in git(R, "grep", "-E", patt["*.css"][0], c, "--", ext).splitlines():
+                _, f, body = line.split(":", 2)
+                if not SKIP.search(f) and (mm := CSS_DEF.match(body)):
+                    defs.setdefault("--" + mm.group(1), unify(mm.group(2).strip()))
     tok_all = {k: v for k in defs if (v := value("$" + k, defs)) and v[0] == "px" and v[1] > 0}
     users = {}
-    for line in git(R, "grep", "-o", "-E", r"\$[a-zA-Z0-9_-]+", c, "--", "*.scss").splitlines():
+    for line in git(R, "grep", "-o", "-E", r"(\$[a-zA-Z0-9_-]+|@[a-zA-Z][a-zA-Z0-9_-]*|var\(\s*--[a-zA-Z0-9_-]+)", c, "--", *exts).splitlines():
         _, f, name = line.split(":", 2)
-        if not SKIP.search(f) and name[1:] in tok_all:
-            users.setdefault(name[1:], set()).add(f)
+        name = re.sub(r"^(\$|@|var\(\s*)", "", name)
+        if not SKIP.search(f) and name in tok_all:
+            users.setdefault(name, set()).add(f)
     tok = {k: v for k, v in tok_all.items() if len(users.get(k, ())) >= MIN_REF_FILES}
+    return defs, tok
+
+
+def _snap(R, c, defs, tok, carbon_v11, exts):
     vals = {tuple(v) for v in tok.values()}
     v11 = carbon_v11 and "$spacing-05" in git(R, "grep", "-c", "-F", "$spacing-05", c, "--", "*.scss")
     if v11:
         vals |= {("px", float(x)) for x in SCALE_V11.values()}
     lits, refs = [], Counter()
-    raw = git(R, "grep", "-E", r"^\s*" + GOV.replace("(?:", "(") + r"\s*:\s*[^;]+;", c, "--", "*.scss")
+    raw = git(R, "grep", "-E", r"^\s*" + GOV.replace("(?:", "(") + r"\s*:\s*[^;]+;", c, "--", *exts)
     for line in raw.splitlines():
         _, f, body = line.split(":", 2)
         if SKIP.search(f):
             continue
         body = body.strip()
-        if "$" in body:
-            for name in re.findall(r"\$([a-zA-Z0-9_-]+)", body):
+        names = ref_names(body)
+        if names or "$" in body:
+            for name in names:
                 v = tok.get(name) or (("px", float(SCALE_V11[name])) if v11 and name in SCALE_V11 else None)
                 if v:
                     refs[v[1]] += 1
@@ -89,7 +138,7 @@ if __name__ == "__main__":
     print(key, len(S), "snapshots", S[0][0], "->", S[-1][0], file=sys.stderr)
     data = []
     for ym, c in S:
-        d = snap(cfg["path"], c, cfg.get("carbon_v11", False))
+        d = snap(cfg["path"], c, cfg.get("carbon_v11", False), cfg.get("exts", ("*.scss",)))
         d.update(month=ym, commit=c)
         data.append(d)
         print(ym, len(d["tokens"]), "token values", len(d["lits"]), "literals", file=sys.stderr, flush=True)

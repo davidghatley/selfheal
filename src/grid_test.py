@@ -11,32 +11,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 
 SYSTEMS = os.environ.get("SNAPS", "carbon eui").split()
-rows = []
-for key in SYSTEMS:
-    os.environ["SNAP"] = f"../data/mined/{key}/snapshots_v2.json"
-    import importlib, clusters as K
-    importlib.reload(K)
-    idx = {s["month"]: i for i, s in enumerate(K.S)}
-    for c in K.clusters():
-        lab = None
-        if c["tokened"]:
-            j = idx[c["tokened"]]
-            mig = K.share(K.S[min(j + 12, len(K.S) - 1)], c["value"]) - K.share(K.S[max(j - 1, 0)], c["value"])
-            new = {t[1] for t in K.S[j]["tokens"]} - {t[1] for t in K.S[j - 1]["tokens"]}
-            if mig >= 0.2:
-                lab = "scale event" if len(new) >= 4 else "single"
-            else:
-                lab = "coincident"
-        elif c["label"] == "drift":
-            lab = "drift"
-        else:
-            lab = c["label"]
-        s = K.S[c["idx"]]
-        toks = sorted(t[1] for t in s["tokens"])
-        rows.append(dict(system=key, value=c["value"], month=c["month"], label=lab, n=c["n"], files=c["files"],
-                         grid4=float(c["value"] % 4 == 0), grid8=float(c["value"] % 8 == 0),
-                         gap=min([abs(math.log(c["value"] / t)) for t in toks] or [3.0]),
-                         rel=c["n"] / max(1, len(s["lits"]))))
+from v2labels import rows as v2rows
+rows = [r for key in SYSTEMS for r in v2rows(key)[0]]
 
 D = [r for r in rows if r["label"] in ("single", "scale event", "drift")]
 y = np.array([r["label"] != "drift" for r in D], int)

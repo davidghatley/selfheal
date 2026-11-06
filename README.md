@@ -54,6 +54,22 @@ Read the results with these limits in mind:
 
 Details: [`notes/step5.md`](notes/step5.md), rules in [`docs/mining.md`](docs/mining.md).
 
+### Update (6 Nov, later): 15 design systems
+
+Carbon, EUI, Bootstrap, Primer CSS, Material Components Web, Ant Design, GOV.UK Frontend, USWDS, Clarity, Spectrum CSS,
+Foundation, Semantic UI, PatternFly, Salesforce Lightning and Blueprint.
+
+- **Snapping is solved only for exact matches.** 695 of 798 drift fixes typed a value that already was a token's value.
+  For values genuinely off the scale (103 fixes, 10 systems), the nearest token is the one the human picked
+  **82% of the time** (95% CI 71–91%); nearby code in the same file doesn't improve it. The "153 of 157" above is
+  accurate but 134 of those are exact matches.
+- **How common a value is predicts whether it becomes a token, across systems.** Trained on 14 systems and tested on
+  the 15th, a model using only a snapshot (uses, files, share of all typed values) ranks future tokens above drift
+  with AUC 0.68–0.71. Git history (bursts, authors, survival) adds almost nothing.
+- **Tokens arrive in batches**: 50 of 73 came in months when a team added 4 or more token values at once.
+
+Details: [`notes/step6.md`](notes/step6.md).
+
 The full write-up, with the reasoning and related work, is the "Self-Healing Design Systems" doc; `PLAN.md` logs every
 decision with its date.
 

@@ -1,0 +1,575 @@
+{
+ "per_system": {
+  "ant-design": {
+   "single": 4,
+   "drift": 20,
+   "scale event": 2
+  },
+  "blueprint": {
+   "drift": 1
+  },
+  "bootstrap": {
+   "drift": 15,
+   "single": 5,
+   "scale event": 4
+  },
+  "carbon": {
+   "drift": 37,
+   "single": 1,
+   "scale event": 5
+  },
+  "clarity": {
+   "scale event": 7,
+   "drift": 20
+  },
+  "eui": {
+   "scale event": 2,
+   "drift": 5,
+   "single": 3
+  },
+  "foundation": {
+   "drift": 3,
+   "single": 1
+  },
+  "govuk-frontend": {
+   "drift": 5,
+   "single": 1
+  },
+  "lightning": {
+   "drift": 7,
+   "single": 1
+  },
+  "mdc-web": {
+   "drift": 18,
+   "scale event": 1,
+   "single": 1
+  },
+  "patternfly": {
+   "drift": 4,
+   "single": 1
+  },
+  "primer-css": {
+   "drift": 4,
+   "scale event": 4,
+   "single": 1
+  },
+  "semantic-ui": {
+   "scale event": 23,
+   "drift": 2
+  },
+  "spectrum-css": {
+   "drift": 3,
+   "single": 1,
+   "scale event": 1
+  },
+  "uswds": {
+   "drift": 13,
+   "scale event": 1,
+   "single": 3
+  }
+ },
+ "all positives": {
+  "n_pos": 73,
+  "n_neg": 157,
+  "base_rate": 0.317,
+  "direct rel": {
+   "auc": 0.687,
+   "ci": [
+    0.48,
+    0.82
+   ]
+  },
+  "direct files": {
+   "auc": 0.703,
+   "ci": [
+    0.58,
+    0.79
+   ]
+  },
+  "direct n": {
+   "auc": 0.731,
+   "ci": [
+    0.61,
+    0.82
+   ]
+  },
+  "direct grid4": {
+   "auc": 0.573,
+   "ci": [
+    0.48,
+    0.7
+   ]
+  },
+  "direct gap": {
+   "auc": 0.577,
+   "ci": [
+    0.36,
+    0.74
+   ]
+  },
+  "direct burst": {
+   "auc": 0.648,
+   "ci": [
+    0.52,
+    0.73
+   ]
+  },
+  "direct authors": {
+   "auc": 0.404,
+   "ci": [
+    0.31,
+    0.56
+   ]
+  },
+  "direct span": {
+   "auc": 0.374,
+   "ci": [
+    0.28,
+    0.52
+   ]
+  },
+  "direct survival": {
+   "auc": 0.499,
+   "ci": [
+    0.38,
+    0.58
+   ]
+  },
+  "model snapshot": {
+   "loo_auc": 0.688,
+   "loso_auc": 0.712,
+   "loso_ci": [
+    0.57,
+    0.81
+   ]
+  },
+  "model time": {
+   "loo_auc": 0.574,
+   "loso_auc": 0.578,
+   "loso_ci": [
+    0.43,
+    0.69
+   ]
+  },
+  "model snapshot+time": {
+   "loo_auc": 0.745,
+   "loso_auc": 0.747,
+   "loso_ci": [
+    0.62,
+    0.84
+   ]
+  },
+  "model snapshot+grid": {
+   "loo_auc": 0.721,
+   "loso_auc": 0.716,
+   "loso_ci": [
+    0.6,
+    0.81
+   ]
+  }
+ },
+ "system-level positives only": {
+  "n_pos": 55,
+  "n_neg": 157,
+  "base_rate": 0.259,
+  "direct rel": {
+   "auc": 0.677,
+   "ci": [
+    0.47,
+    0.85
+   ]
+  },
+  "direct files": {
+   "auc": 0.72,
+   "ci": [
+    0.57,
+    0.82
+   ]
+  },
+  "direct n": {
+   "auc": 0.747,
+   "ci": [
+    0.61,
+    0.84
+   ]
+  },
+  "direct grid4": {
+   "auc": 0.558,
+   "ci": [
+    0.44,
+    0.72
+   ]
+  },
+  "direct gap": {
+   "auc": 0.616,
+   "ci": [
+    0.32,
+    0.79
+   ]
+  },
+  "direct burst": {
+   "auc": 0.663,
+   "ci": [
+    0.51,
+    0.75
+   ]
+  },
+  "direct authors": {
+   "auc": 0.385,
+   "ci": [
+    0.29,
+    0.61
+   ]
+  },
+  "direct span": {
+   "auc": 0.358,
+   "ci": [
+    0.26,
+    0.53
+   ]
+  },
+  "direct survival": {
+   "auc": 0.504,
+   "ci": [
+    0.31,
+    0.61
+   ]
+  },
+  "model snapshot": {
+   "loo_auc": 0.709,
+   "loso_auc": 0.726,
+   "loso_ci": [
+    0.54,
+    0.83
+   ]
+  },
+  "model time": {
+   "loo_auc": 0.628,
+   "loso_auc": 0.562,
+   "loso_ci": [
+    0.39,
+    0.69
+   ]
+  },
+  "model snapshot+time": {
+   "loo_auc": 0.749,
+   "loso_auc": 0.735,
+   "loso_ci": [
+    0.53,
+    0.85
+   ]
+  },
+  "model snapshot+grid": {
+   "loo_auc": 0.716,
+   "loso_auc": 0.71,
+   "loso_ci": [
+    0.54,
+    0.81
+   ]
+  }
+ },
+ "without semantic-ui": {
+  "n_pos": 50,
+  "n_neg": 155,
+  "base_rate": 0.244,
+  "direct rel": {
+   "auc": 0.75,
+   "ci": [
+    0.6,
+    0.84
+   ]
+  },
+  "direct files": {
+   "auc": 0.677,
+   "ci": [
+    0.55,
+    0.78
+   ]
+  },
+  "direct n": {
+   "auc": 0.703,
+   "ci": [
+    0.58,
+    0.82
+   ]
+  },
+  "direct grid4": {
+   "auc": 0.615,
+   "ci": [
+    0.5,
+    0.73
+   ]
+  },
+  "direct gap": {
+   "auc": 0.447,
+   "ci": [
+    0.32,
+    0.59
+   ]
+  },
+  "direct burst": {
+   "auc": 0.635,
+   "ci": [
+    0.49,
+    0.73
+   ]
+  },
+  "direct authors": {
+   "auc": 0.465,
+   "ci": [
+    0.37,
+    0.6
+   ]
+  },
+  "direct span": {
+   "auc": 0.401,
+   "ci": [
+    0.29,
+    0.56
+   ]
+  },
+  "direct survival": {
+   "auc": 0.46,
+   "ci": [
+    0.35,
+    0.56
+   ]
+  },
+  "model snapshot": {
+   "loo_auc": 0.67,
+   "loso_auc": 0.687,
+   "loso_ci": [
+    0.56,
+    0.8
+   ]
+  },
+  "model time": {
+   "loo_auc": 0.552,
+   "loso_auc": 0.576,
+   "loso_ci": [
+    0.42,
+    0.7
+   ]
+  },
+  "model snapshot+time": {
+   "loo_auc": 0.71,
+   "loso_auc": 0.711,
+   "loso_ci": [
+    0.55,
+    0.82
+   ]
+  },
+  "model snapshot+grid": {
+   "loo_auc": 0.699,
+   "loso_auc": 0.7,
+   "loso_ci": [
+    0.58,
+    0.81
+   ]
+  }
+ },
+ "without semantic-ui, clarity": {
+  "n_pos": 43,
+  "n_neg": 135,
+  "base_rate": 0.242,
+  "direct rel": {
+   "auc": 0.738,
+   "ci": [
+    0.56,
+    0.85
+   ]
+  },
+  "direct files": {
+   "auc": 0.688,
+   "ci": [
+    0.55,
+    0.79
+   ]
+  },
+  "direct n": {
+   "auc": 0.715,
+   "ci": [
+    0.57,
+    0.83
+   ]
+  },
+  "direct grid4": {
+   "auc": 0.612,
+   "ci": [
+    0.49,
+    0.74
+   ]
+  },
+  "direct gap": {
+   "auc": 0.45,
+   "ci": [
+    0.3,
+    0.6
+   ]
+  },
+  "direct burst": {
+   "auc": 0.621,
+   "ci": [
+    0.46,
+    0.74
+   ]
+  },
+  "direct authors": {
+   "auc": 0.486,
+   "ci": [
+    0.37,
+    0.62
+   ]
+  },
+  "direct span": {
+   "auc": 0.425,
+   "ci": [
+    0.3,
+    0.6
+   ]
+  },
+  "direct survival": {
+   "auc": 0.443,
+   "ci": [
+    0.31,
+    0.55
+   ]
+  },
+  "model snapshot": {
+   "loo_auc": 0.655,
+   "loso_auc": 0.683,
+   "loso_ci": [
+    0.54,
+    0.81
+   ]
+  },
+  "model time": {
+   "loo_auc": 0.572,
+   "loso_auc": 0.57,
+   "loso_ci": [
+    0.43,
+    0.7
+   ]
+  },
+  "model snapshot+time": {
+   "loo_auc": 0.706,
+   "loso_auc": 0.698,
+   "loso_ci": [
+    0.53,
+    0.83
+   ]
+  },
+  "model snapshot+grid": {
+   "loo_auc": 0.691,
+   "loso_auc": 0.691,
+   "loso_ci": [
+    0.56,
+    0.81
+   ]
+  }
+ },
+ "system-level only, without semantic-ui": {
+  "n_pos": 32,
+  "n_neg": 155,
+  "base_rate": 0.171,
+  "direct rel": {
+   "auc": 0.769,
+   "ci": [
+    0.61,
+    0.87
+   ]
+  },
+  "direct files": {
+   "auc": 0.691,
+   "ci": [
+    0.52,
+    0.82
+   ]
+  },
+  "direct n": {
+   "auc": 0.714,
+   "ci": [
+    0.57,
+    0.83
+   ]
+  },
+  "direct grid4": {
+   "auc": 0.614,
+   "ci": [
+    0.47,
+    0.76
+   ]
+  },
+  "direct gap": {
+   "auc": 0.439,
+   "ci": [
+    0.26,
+    0.61
+   ]
+  },
+  "direct burst": {
+   "auc": 0.652,
+   "ci": [
+    0.46,
+    0.76
+   ]
+  },
+  "direct authors": {
+   "auc": 0.47,
+   "ci": [
+    0.33,
+    0.66
+   ]
+  },
+  "direct span": {
+   "auc": 0.392,
+   "ci": [
+    0.28,
+    0.6
+   ]
+  },
+  "direct survival": {
+   "auc": 0.446,
+   "ci": [
+    0.26,
+    0.59
+   ]
+  },
+  "model snapshot": {
+   "loo_auc": 0.666,
+   "loso_auc": 0.682,
+   "loso_ci": [
+    0.52,
+    0.83
+   ]
+  },
+  "model time": {
+   "loo_auc": 0.595,
+   "loso_auc": 0.566,
+   "loso_ci": [
+    0.35,
+    0.71
+   ]
+  },
+  "model snapshot+time": {
+   "loo_auc": 0.694,
+   "loso_auc": 0.661,
+   "loso_ci": [
+    0.45,
+    0.82
+   ]
+  },
+  "model snapshot+grid": {
+   "loo_auc": 0.682,
+   "loso_auc": 0.669,
+   "loso_ci": [
+    0.5,
+    0.82
+   ]
+  }
+ },
+ "positive kinds": {
+  "single": 23,
+  "scale event": 50
+ }
+}
