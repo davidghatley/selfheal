@@ -105,7 +105,7 @@ def context_prior(s, bound, elems, K=15):
     return {k: v / z for k, v in votes.items()}
 
 
-def mixture(tokens, sites, use_context=True, alpha=1.0, eps=0.15, tau=4.0, min_group=5, min_comps=4):
+def mixture(tokens, sites, use_context=True, alpha=1.0, eps=0.15, tau=4.0, min_group=5, min_comps=4, group_filter=None):
     sp = Space(tokens)
     bound, elems = defaultdict(list), defaultdict(list)
     for s in sites:
@@ -140,7 +140,7 @@ def mixture(tokens, sites, use_context=True, alpha=1.0, eps=0.15, tau=4.0, min_g
             explained = n / len(g) >= 0.6 and mean_m <= AMBIG
         else:
             explained = sp.ranked(g[0])[0][0] <= AMBIG
-        if not explained:
+        if not explained and (group_filter is None or group_filter(g)):
             for s in g:
                 out[s["id"]] = f"new:{s['type']}:{norm(g[0]['literal'])}"
     for s in L:

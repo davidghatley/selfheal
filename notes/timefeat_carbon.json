@@ -1,0 +1,36 @@
+{
+ "era only": {
+  "auc": 0.647,
+  "precision": 0.171,
+  "recall": 0.857,
+  "flagged": 35
+ },
+ "snapshot": {
+  "auc": 0.708,
+  "precision": 0.273,
+  "recall": 0.429,
+  "flagged": 11
+ },
+ "time": {
+  "auc": 0.578,
+  "precision": 0.211,
+  "recall": 0.571,
+  "flagged": 19
+ },
+ "snapshot+time": {
+  "auc": 0.614,
+  "precision": 0.2,
+  "recall": 0.429,
+  "flagged": 15
+ },
+ "pre-specified votes": {
+  "precision": 0.136,
+  "recall": 0.857,
+  "flagged": 44
+ },
+ "all clusters (snapshot rule)": {
+  "precision": 0.13,
+  "recall": 1.0,
+  "flagged": 54
+ }
+}

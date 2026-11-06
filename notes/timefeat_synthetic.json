@@ -1,0 +1,122 @@
+{
+ "1": {
+  "snapshot": {
+   "exact": 1.0,
+   "near": 0.9473684210526315,
+   "ambiguous": 0.775,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.9441624365482234,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.7027027027027027
+  },
+  "time": {
+   "exact": 1.0,
+   "near": 1.0,
+   "ambiguous": 1.0,
+   "cluster": 0.6538461538461539,
+   "intentional": 1.0,
+   "action_acc": 0.9543147208121827,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 1.0
+  }
+ },
+ "2": {
+  "snapshot": {
+   "exact": 1.0,
+   "near": 0.8837209302325582,
+   "ambiguous": 0.7307692307692307,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.9128440366972477,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.5869565217391305
+  },
+  "time": {
+   "exact": 1.0,
+   "near": 0.9767441860465116,
+   "ambiguous": 0.8653846153846154,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.963302752293578,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.7714285714285715
+  }
+ },
+ "3": {
+  "snapshot": {
+   "exact": 1.0,
+   "near": 0.8653846153846154,
+   "ambiguous": 0.7192982456140351,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.8982300884955752,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.5510204081632653
+  },
+  "time": {
+   "exact": 1.0,
+   "near": 1.0,
+   "ambiguous": 0.8947368421052632,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.9734513274336283,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.84375
+  }
+ },
+ "4": {
+  "snapshot": {
+   "exact": 0.9811320754716981,
+   "near": 0.8333333333333334,
+   "ambiguous": 0.6271186440677966,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.8604651162790697,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.4642857142857143
+  },
+  "time": {
+   "exact": 1.0,
+   "near": 1.0,
+   "ambiguous": 0.9491525423728814,
+   "cluster": 0.6538461538461539,
+   "intentional": 1.0,
+   "action_acc": 0.9441860465116279,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.8947368421052632
+  }
+ },
+ "5": {
+  "snapshot": {
+   "exact": 1.0,
+   "near": 0.8490566037735849,
+   "ambiguous": 0.6268656716417911,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.8700787401574803,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.4482758620689655
+  },
+  "time": {
+   "exact": 1.0,
+   "near": 0.9811320754716981,
+   "ambiguous": 0.9253731343283582,
+   "cluster": 1.0,
+   "intentional": 1.0,
+   "action_acc": 0.9763779527559056,
+   "detect_P": 1.0,
+   "detect_R": 1.0,
+   "new_P": 0.8387096774193549
+  }
+ }
+}
