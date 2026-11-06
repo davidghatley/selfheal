@@ -131,6 +131,8 @@ def mixture(tokens, sites, use_context=True, alpha=1.0, eps=0.15, tau=4.0, min_g
     for g in groups:
         if len(g) < min_group or len({s["component"] for s in g}) < min_comps:
             continue
+        if sp.ranked(g[0])[0][0] <= 0.3:   # a token already sits at the group's centre
+            continue
         if use_context:
             maps = Counter(post[s["id"]][0] for s in g)
             top, n = maps.most_common(1)[0]

@@ -24,10 +24,12 @@ def score(truth, pred):
         per[s["cls"]][0] += correct(p, s["truth"]); per[s["cls"]][1] += 1
         flag_t, flag_p = s["truth"] != "leave", p != "leave"
         tp += flag_t and flag_p; fp += flag_p and not flag_t; fn += flag_t and not flag_p
+    pn = [s for s in truth if pred.get(s["id"], "leave").startswith("new:")]
     n_ok = sum(v[0] for v in per.values()); n = sum(v[1] for v in per.values())
     row = {c: per[c][0] / per[c][1] for c in CLASSES if per[c][1]}
     row["action_acc"] = n_ok / n
     row["detect_P"] = tp / max(1, tp + fp); row["detect_R"] = tp / max(1, tp + fn)
+    row["new_P"] = sum(s["truth"].startswith("new:") for s in pn) / len(pn) if pn else 1.0
     return row
 
 
