@@ -1,0 +1,470 @@
+{
+ "agg": {
+  "mixture+context": {
+   "action_acc": 0.8971560836355192,
+   "ambiguous": 0.6958103584185708,
+   "near": 0.8757727807553447,
+   "cluster": 1.0,
+   "new_P": 0.5506482417919557
+  },
+  "nearest": {
+   "action_acc": 0.7236786162249108,
+   "ambiguous": 0.44941654009510534,
+   "near": 0.9015969565795205,
+   "cluster": 0.0,
+   "new_P": 1.0
+  },
+  "full:codex": {
+   "action_acc": 0.914,
+   "ambiguous": 0.791,
+   "near": 0.969,
+   "cluster": 0.731,
+   "new_P": 0.669,
+   "secs": 53.6,
+   "acc_sd": 0.032,
+   "cost_usd": null,
+   "tokens": 33565,
+   "n": 5,
+   "missing_ids": 0
+  },
+  "full:opus": {
+   "action_acc": 0.969,
+   "ambiguous": 0.888,
+   "near": 0.982,
+   "cluster": 0.992,
+   "new_P": 0.811,
+   "secs": 132.6,
+   "acc_sd": 0.012,
+   "cost_usd": 0.739,
+   "tokens": 358939,
+   "n": 5,
+   "missing_ids": 0
+  },
+  "full:sonnet": {
+   "action_acc": 0.844,
+   "ambiguous": 0.498,
+   "near": 0.842,
+   "cluster": 1.0,
+   "new_P": 0.548,
+   "secs": 68.8,
+   "acc_sd": 0.058,
+   "cost_usd": 0.265,
+   "tokens": 270568,
+   "n": 5,
+   "missing_ids": 0
+  },
+  "hybrid:codex": {
+   "action_acc": 0.903,
+   "ambiguous": 0.979,
+   "near": 0.995,
+   "cluster": 0.244,
+   "new_P": 0.925,
+   "secs": 35.8,
+   "acc_sd": 0.014,
+   "cost_usd": null,
+   "tokens": 27557,
+   "n": 5,
+   "missing_ids": 0
+  },
+  "hybrid:opus": {
+   "action_acc": 0.946,
+   "ambiguous": 0.916,
+   "near": 0.981,
+   "cluster": 0.734,
+   "new_P": 0.866,
+   "secs": 96.4,
+   "acc_sd": 0.016,
+   "cost_usd": 0.573,
+   "tokens": 355163,
+   "n": 5,
+   "missing_ids": 0
+  },
+  "hybrid:sonnet": {
+   "action_acc": 0.909,
+   "ambiguous": 0.727,
+   "near": 0.884,
+   "cluster": 1.0,
+   "new_P": 0.597,
+   "secs": 32.2,
+   "acc_sd": 0.016,
+   "cost_usd": 0.171,
+   "tokens": 249665,
+   "n": 5,
+   "missing_ids": 0
+  }
+ },
+ "rows": {
+  "full:codex": [
+   {
+    "seed": "1",
+    "secs": 58,
+    "cost": null,
+    "tokens": 37214,
+    "missing": 0,
+    "action_acc": 0.9035532994923858,
+    "ambiguous": 0.65,
+    "near": 0.868421052631579,
+    "cluster": 1.0,
+    "new_P": 0.5777777777777777
+   },
+   {
+    "seed": "2",
+    "secs": 47,
+    "cost": null,
+    "tokens": 34275,
+    "missing": 0,
+    "action_acc": 0.9678899082568807,
+    "ambiguous": 0.8846153846153846,
+    "near": 0.9767441860465116,
+    "cluster": 1.0,
+    "new_P": 0.7941176470588235
+   },
+   {
+    "seed": "3",
+    "secs": 53,
+    "cost": null,
+    "tokens": 28941,
+    "missing": 0,
+    "action_acc": 0.9070796460176991,
+    "ambiguous": 0.631578947368421,
+    "near": 1.0,
+    "cluster": 1.0,
+    "new_P": 0.5625
+   },
+   {
+    "seed": "4",
+    "secs": 47,
+    "cost": null,
+    "tokens": 33736,
+    "missing": 0,
+    "action_acc": 0.9116279069767442,
+    "ambiguous": 0.9830508474576272,
+    "near": 1.0,
+    "cluster": 0.3076923076923077,
+    "new_P": 1.0
+   },
+   {
+    "seed": "5",
+    "secs": 63,
+    "cost": null,
+    "tokens": 33663,
+    "missing": 0,
+    "action_acc": 0.8818897637795275,
+    "ambiguous": 0.8059701492537313,
+    "near": 1.0,
+    "cluster": 0.34615384615384615,
+    "new_P": 0.4090909090909091
+   }
+  ],
+  "full:opus": [
+   {
+    "seed": "1",
+    "secs": 185,
+    "cost": 0.9296452000000001,
+    "tokens": 589597,
+    "missing": 0,
+    "action_acc": 0.949238578680203,
+    "ambiguous": 0.8,
+    "near": 0.9736842105263158,
+    "cluster": 0.9615384615384616,
+    "new_P": 0.7352941176470589
+   },
+   {
+    "seed": "2",
+    "secs": 110,
+    "cost": 0.6350874000000001,
+    "tokens": 276594,
+    "missing": 0,
+    "action_acc": 0.9678899082568807,
+    "ambiguous": 0.8846153846153846,
+    "near": 0.9767441860465116,
+    "cluster": 1.0,
+    "new_P": 0.7941176470588235
+   },
+   {
+    "seed": "3",
+    "secs": 96,
+    "cost": 0.6594292,
+    "tokens": 345555,
+    "missing": 0,
+    "action_acc": 0.9734513274336283,
+    "ambiguous": 0.8947368421052632,
+    "near": 1.0,
+    "cluster": 1.0,
+    "new_P": 0.8181818181818182
+   },
+   {
+    "seed": "4",
+    "secs": 108,
+    "cost": 0.6845676,
+    "tokens": 283698,
+    "missing": 0,
+    "action_acc": 0.9813953488372092,
+    "ambiguous": 0.9491525423728814,
+    "near": 0.9761904761904762,
+    "cluster": 1.0,
+    "new_P": 0.8666666666666667
+   },
+   {
+    "seed": "5",
+    "secs": 164,
+    "cost": 0.7882494,
+    "tokens": 299253,
+    "missing": 0,
+    "action_acc": 0.9724409448818898,
+    "ambiguous": 0.9104477611940298,
+    "near": 0.9811320754716981,
+    "cluster": 1.0,
+    "new_P": 0.8387096774193549
+   }
+  ],
+  "full:sonnet": [
+   {
+    "seed": "1",
+    "secs": 65,
+    "cost": 0.2525969,
+    "tokens": 213637,
+    "missing": 0,
+    "action_acc": 0.8629441624365483,
+    "ambiguous": 0.425,
+    "near": 0.8947368421052632,
+    "cluster": 1.0,
+    "new_P": 0.5652173913043478
+   },
+   {
+    "seed": "2",
+    "secs": 88,
+    "cost": 0.29844780000000004,
+    "tokens": 313384,
+    "missing": 0,
+    "action_acc": 0.9036697247706422,
+    "ambiguous": 0.7307692307692307,
+    "near": 0.8372093023255814,
+    "cluster": 1.0,
+    "new_P": 0.6
+   },
+   {
+    "seed": "3",
+    "secs": 60,
+    "cost": 0.23028969999999999,
+    "tokens": 296273,
+    "missing": 0,
+    "action_acc": 0.7610619469026548,
+    "ambiguous": 0.19298245614035087,
+    "near": 0.8461538461538461,
+    "cluster": 1.0,
+    "new_P": 0.46551724137931033
+   },
+   {
+    "seed": "4",
+    "secs": 74,
+    "cost": 0.3116752,
+    "tokens": 275494,
+    "missing": 0,
+    "action_acc": 0.8837209302325582,
+    "ambiguous": 0.6779661016949152,
+    "near": 0.8571428571428571,
+    "cluster": 1.0,
+    "new_P": 0.5909090909090909
+   },
+   {
+    "seed": "5",
+    "secs": 57,
+    "cost": 0.23402040000000002,
+    "tokens": 254055,
+    "missing": 0,
+    "action_acc": 0.8110236220472441,
+    "ambiguous": 0.4626865671641791,
+    "near": 0.7735849056603774,
+    "cluster": 1.0,
+    "new_P": 0.52
+   }
+  ],
+  "hybrid:codex": [
+   {
+    "seed": "1",
+    "secs": 40,
+    "cost": null,
+    "tokens": 47519,
+    "missing": 0,
+    "action_acc": 0.9137055837563451,
+    "ambiguous": 1.0,
+    "near": 1.0,
+    "cluster": 0.34615384615384615,
+    "new_P": 1.0
+   },
+   {
+    "seed": "2",
+    "secs": 42,
+    "cost": null,
+    "tokens": 24694,
+    "missing": 0,
+    "action_acc": 0.8853211009174312,
+    "ambiguous": 0.9423076923076923,
+    "near": 1.0,
+    "cluster": 0.18518518518518517,
+    "new_P": 0.625
+   },
+   {
+    "seed": "3",
+    "secs": 32,
+    "cost": null,
+    "tokens": 18069,
+    "missing": 0,
+    "action_acc": 0.8938053097345132,
+    "ambiguous": 0.9824561403508771,
+    "near": 1.0,
+    "cluster": 0.14814814814814814,
+    "new_P": 1.0
+   },
+   {
+    "seed": "4",
+    "secs": 28,
+    "cost": null,
+    "tokens": 22781,
+    "missing": 0,
+    "action_acc": 0.9069767441860465,
+    "ambiguous": 0.9830508474576272,
+    "near": 0.9761904761904762,
+    "cluster": 0.3076923076923077,
+    "new_P": 1.0
+   },
+   {
+    "seed": "5",
+    "secs": 37,
+    "cost": null,
+    "tokens": 24725,
+    "missing": 0,
+    "action_acc": 0.9173228346456693,
+    "ambiguous": 0.9850746268656716,
+    "near": 1.0,
+    "cluster": 0.23076923076923078,
+    "new_P": 1.0
+   }
+  ],
+  "hybrid:opus": [
+   {
+    "seed": "1",
+    "secs": 55,
+    "cost": 0.4101318,
+    "tokens": 209777,
+    "missing": 0,
+    "action_acc": 0.9441624365482234,
+    "ambiguous": 0.775,
+    "near": 0.9473684210526315,
+    "cluster": 1.0,
+    "new_P": 0.7027027027027027
+   },
+   {
+    "seed": "2",
+    "secs": 118,
+    "cost": 0.5816668,
+    "tokens": 366217,
+    "missing": 0,
+    "action_acc": 0.963302752293578,
+    "ambiguous": 0.8653846153846154,
+    "near": 0.9767441860465116,
+    "cluster": 1.0,
+    "new_P": 0.7714285714285715
+   },
+   {
+    "seed": "3",
+    "secs": 105,
+    "cost": 0.5477016,
+    "tokens": 305713,
+    "missing": 0,
+    "action_acc": 0.9513274336283186,
+    "ambiguous": 0.9824561403508771,
+    "near": 1.0,
+    "cluster": 0.6296296296296297,
+    "new_P": 1.0
+   },
+   {
+    "seed": "4",
+    "secs": 111,
+    "cost": 0.6123694,
+    "tokens": 336420,
+    "missing": 0,
+    "action_acc": 0.9209302325581395,
+    "ambiguous": 1.0,
+    "near": 1.0,
+    "cluster": 0.34615384615384615,
+    "new_P": 1.0
+   },
+   {
+    "seed": "5",
+    "secs": 93,
+    "cost": 0.7138363999999999,
+    "tokens": 557690,
+    "missing": 0,
+    "action_acc": 0.952755905511811,
+    "ambiguous": 0.9552238805970149,
+    "near": 0.9811320754716981,
+    "cluster": 0.6923076923076923,
+    "new_P": 0.8571428571428571
+   }
+  ],
+  "hybrid:sonnet": [
+   {
+    "seed": "1",
+    "secs": 36,
+    "cost": 0.18355580000000002,
+    "tokens": 290433,
+    "missing": 0,
+    "action_acc": 0.9289340101522843,
+    "ambiguous": 0.7,
+    "near": 0.9473684210526315,
+    "cluster": 1.0,
+    "new_P": 0.7027027027027027
+   },
+   {
+    "seed": "2",
+    "secs": 35,
+    "cost": 0.174425,
+    "tokens": 274761,
+    "missing": 0,
+    "action_acc": 0.9174311926605505,
+    "ambiguous": 0.75,
+    "near": 0.8837209302325582,
+    "cluster": 1.0,
+    "new_P": 0.6
+   },
+   {
+    "seed": "3",
+    "secs": 26,
+    "cost": 0.15063510000000002,
+    "tokens": 231681,
+    "missing": 0,
+    "action_acc": 0.8982300884955752,
+    "ambiguous": 0.7192982456140351,
+    "near": 0.8653846153846154,
+    "cluster": 1.0,
+    "new_P": 0.5510204081632653
+   },
+   {
+    "seed": "4",
+    "secs": 31,
+    "cost": 0.17099030000000004,
+    "tokens": 205729,
+    "missing": 0,
+    "action_acc": 0.9116279069767442,
+    "ambiguous": 0.7796610169491526,
+    "near": 0.8571428571428571,
+    "cluster": 1.0,
+    "new_P": 0.5909090909090909
+   },
+   {
+    "seed": "5",
+    "secs": 33,
+    "cost": 0.1741788,
+    "tokens": 245721,
+    "missing": 0,
+    "action_acc": 0.889763779527559,
+    "ambiguous": 0.6865671641791045,
+    "near": 0.8679245283018868,
+    "cluster": 1.0,
+    "new_P": 0.5416666666666666
+   }
+  ]
+ }
+}

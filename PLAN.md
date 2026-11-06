@@ -9,10 +9,16 @@ heuristic drift detection, measure frontier agents on the same task, and test he
 - [x] Agent arm (seeds 1-2): Opus 5.5 0.94, Codex 0.93, Sonnet 0.88; mixture+context 0.93. Gemini CLI unauthenticated
 - [x] Healer: lowest-entropy-first iteration, energy, behavior preservation, idempotence
 - [x] Spec evolution: new tokens; lens-law / oscillation tests
-- [ ] Real-repo check (an open-source app with tokens)
+- [x] Real-repo check: Carbon history mined (docs/mining.md); nearest 0.975 vs mixture+context 0.962 on 157 labels
+- [x] Iteration fixes: earlier degradation was a healer bug; all variants equal one-shot
+- [x] Time features: help on simulated history (newP 0.55->0.87), not on Carbon (AUC 0.71 -> 0.61)
+- [x] Matched-tools agent rerun, 5 seeds: Opus 0.969, Codex 0.914, Sonnet 0.844; hybrid helps Sonnet only
+- [ ] Package the benchmark (synthetic + mined splits); Gemini CLI needs auth
 - [x] First write-up into the doc (2026-11-05)
 
 ## Decisions
 - 2026-11-05: Σ_k declared by scale geometry (half the gap to the nearest token, OKLab for color, log-px for sizes).
 - 2026-11-05: Agents get file tools only (no unrestricted shell); Codex keeps its workspace-write sandbox.
 - 2026-11-05: Cluster rule fixed: a token at a group's centre explains it (otherwise the spec regrew every pass).
+- 2026-11-05: Step 4 agents all get sandboxed code execution (Claude bubblewrap sandbox; Codex workspace-write).
+- 2026-11-05: Mined Carbon labels are the headline; synthetic results are secondary (author overlap).
