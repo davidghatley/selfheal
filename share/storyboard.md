@@ -24,7 +24,7 @@ lands (06). Mastered to −14 LUFS. Nothing carries meaning that the screen does
 
 ## Square still (1080×1080)
 Beat 04's reveal: the two identical cards (48px vs 42px, same month, same counts) with their outcomes, under the line
-"In one snapshot, a habit and a typo look the same."
+"In one snapshot, they look the same."
 
 ## Changes after review
 See process.md: 98.9% became "189 of 191" (it rounds to 99.0%), test 02 leads with Carbon, the habit/typo line was
