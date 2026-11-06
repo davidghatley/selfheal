@@ -55,6 +55,18 @@ def value(expr, defs, depth=0):
     if m := re.fullmatch(r"(.+?)\s*\*\s*" + NUM, e):
         v = value(m.group(1), defs, depth + 1)
         return ("px", v[1] * float(m.group(2))) if v and v[0] == "px" else None
+    if m := re.fullmatch(NUM + r"\s*\*\s*(.+)", e):
+        v = value(m.group(2), defs, depth + 1)
+        return ("px", v[1] * float(m.group(1))) if v and v[0] == "px" else None
+    if m := re.fullmatch(r"(?:math\.div\((.+?),\s*" + NUM + r"\)|(.+?)\s*/\s*" + NUM + ")", e):
+        v = value(m.group(1) or m.group(3), defs, depth + 1)
+        d = float(m.group(2) or m.group(4))
+        return ("px", v[1] / d) if v and v[0] == "px" and d else None
+    if m := re.fullmatch(r"(.+?)\s+([+-])\s+(.+)", e):
+        a, b = value(m.group(1), defs, depth + 1), value(m.group(3), defs, depth + 1)
+        if a and b and a[0] == b[0] == "px":
+            return ("px", a[1] + b[1] if m.group(2) == "+" else a[1] - b[1])
+        return None
     if m := re.fullmatch(r"-\s*(.+)", e):
         v = value(m.group(1), defs, depth + 1)
         return ("px", -v[1]) if v and v[0] == "px" else None

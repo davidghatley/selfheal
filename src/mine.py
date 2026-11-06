@@ -17,6 +17,8 @@ TOKEN_RX = {
     "polaris": re.compile(r"(var\(--p-[\w-]+\)|\b(?:spacing|color|font-size|border-radius|border-width)\([^)]*\))"),
     # Primer: var(--base-size-16), var(--fgColor-default), var(--space-small)
     "primer": re.compile(r"var\(--[\w-]+(?:,[^)]*)?\)"),
+    # EUI: $euiSize, $euiSizeS, $euiFontSizeXS (SCSS era, 2017-2022)
+    "eui": re.compile(r"\$eui[\w-]+"),
 }
 LIT = re.compile(r"(?<![\w$-])(-?\d*\.?\d+(?:px|rem|em)\b|#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\))")
 DECL = re.compile(r"^\s*([a-z-]+)\s*:\s*(.+?)\s*;?\s*(?://.*)?$")

@@ -1,0 +1,203 @@
+{
+ "skipped": {
+  "not a single spacing value": 194,
+  "zero/negative": 1
+ },
+ "kinds": {
+  "near": 3,
+  "changed": 4,
+  "exact": 11
+ },
+ "exact": {
+  "n": 11,
+  "commits": 6,
+  "exact": 1.0,
+  "nearest": 1.0,
+  "nearest_correct": 11
+ },
+ "near": {
+  "n": 3,
+  "commits": 3,
+  "exact": 0.0,
+  "nearest": 0.667,
+  "nearest_correct": 2
+ },
+ "changed": {
+  "n": 4,
+  "commits": 3,
+  "exact": 0.0,
+  "nearest": 0.75,
+  "nearest_correct": 3
+ },
+ "exact+near": {
+  "n": 14,
+  "commits": 7,
+  "exact": 0.786,
+  "nearest": 0.929,
+  "nearest_correct": 13
+ },
+ "rows": [
+  {
+   "commit": "2034dc52",
+   "date": "2023-09-19",
+   "lit": 0.8,
+   "tok": 2,
+   "kind": "near",
+   "exact": false,
+   "nearest": false
+  },
+  {
+   "commit": "2034dc52",
+   "date": "2023-09-19",
+   "lit": 4.0,
+   "tok": 8,
+   "kind": "changed",
+   "exact": false,
+   "nearest": false
+  },
+  {
+   "commit": "eacb1fee",
+   "date": "2023-08-28",
+   "lit": 44.0,
+   "tok": 48,
+   "kind": "changed",
+   "exact": false,
+   "nearest": true
+  },
+  {
+   "commit": "65131df1",
+   "date": "2022-12-07",
+   "lit": 2.0,
+   "tok": 2,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "f8d24a3b",
+   "date": "2022-04-22",
+   "lit": 12.0,
+   "tok": 12,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "f8d24a3b",
+   "date": "2022-04-22",
+   "lit": 8.0,
+   "tok": 8,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "f8d24a3b",
+   "date": "2022-04-22",
+   "lit": 1.0,
+   "tok": 1.0,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "e11f52f0",
+   "date": "2022-02-15",
+   "lit": 12.0,
+   "tok": 12,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "e11f52f0",
+   "date": "2022-02-15",
+   "lit": 10.0,
+   "tok": 8,
+   "kind": "near",
+   "exact": false,
+   "nearest": true
+  },
+  {
+   "commit": "b0fd0e3a",
+   "date": "2021-01-15",
+   "lit": 60.0,
+   "tok": 32,
+   "kind": "changed",
+   "exact": false,
+   "nearest": true
+  },
+  {
+   "commit": "b0fd0e3a",
+   "date": "2021-01-15",
+   "lit": 60.0,
+   "tok": 32,
+   "kind": "changed",
+   "exact": false,
+   "nearest": true
+  },
+  {
+   "commit": "3bccffca",
+   "date": "2018-02-02",
+   "lit": 4.0,
+   "tok": 4,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "3bccffca",
+   "date": "2018-02-02",
+   "lit": 4.0,
+   "tok": 4,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "0ff81af8",
+   "date": "2016-07-10",
+   "lit": 16.0,
+   "tok": 16,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "0ff81af8",
+   "date": "2016-07-10",
+   "lit": 16.0,
+   "tok": 16,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "ab28adf0",
+   "date": "2016-06-27",
+   "lit": 16.0,
+   "tok": 16,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "ab28adf0",
+   "date": "2016-06-27",
+   "lit": 16.0,
+   "tok": 16,
+   "kind": "exact",
+   "exact": true,
+   "nearest": true
+  },
+  {
+   "commit": "ab28adf0",
+   "date": "2016-06-27",
+   "lit": 10.0,
+   "tok": 8,
+   "kind": "near",
+   "exact": false,
+   "nearest": true
+  }
+ ]
+}

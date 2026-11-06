@@ -1,8 +1,9 @@
 """Off-spec clusters and their outcome labels from data/mined/snapshots.json (rules in desire.py's docstring)."""
-import json, sys
+import json, os, sys
 from collections import Counter, defaultdict
-S = json.load(open("../data/mined/snapshots.json"))
+S = json.load(open(os.environ.get("SNAP", "../data/mined/snapshots.json")))
 HORIZON, MIN_N, MIN_FILES = 24, 3, 2
+REDESIGN = float(os.environ.get("REDESIGN", "0"))  # v2: 0.4 = >= 40% of token values new that month
 
 
 def uses(s, v):
@@ -20,6 +21,14 @@ def rel(s, v):
     return len(uses(s, v)) / max(1, len(s["lits"]))
 
 
+def churn(j):
+    """Share of the token values at snapshot j that were not tokens at j-1."""
+    if j == 0:
+        return 1.0
+    now, before = {t[1] for t in S[j]["tokens"]}, {t[1] for t in S[j - 1]["tokens"]}
+    return len(now - before) / max(1, len(now))
+
+
 def clusters():
     seen, out = set(), []
     for i, s in enumerate(S):
@@ -35,7 +44,9 @@ def clusters():
                 tokened = next((f["month"] for f in fut if v in {t[1] for t in f["tokens"]}), None)
                 end = fut[-1] if fut else s
                 n_end = len(uses(end, v))
-                if tokened:
+                if tokened and REDESIGN and churn(next(k for k, f in enumerate(S) if f["month"] == tokened)) >= REDESIGN:
+                    lab = "redesign"  # the value arrived in a scale rewrite, not as a response to use
+                elif tokened:
                     # desire path only if the literals then migrate: uses fall >= 30% from the month before the token to 12 months after
                     j = next(k for k, f in enumerate(S) if f["month"] == tokened)
                     lab = "desire" if share(S[min(j + 12, len(S) - 1)], v) - share(S[max(j - 1, 0)], v) >= 0.2 else "coincident"
